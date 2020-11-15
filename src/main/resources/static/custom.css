@@ -1,0 +1,52 @@
+html, body {
+    height: 100%;
+    width: 100%;
+}
+
+.navbar-brand{
+    font-size: 28px;
+    position: relative;
+    top: 20px;
+}
+.nav-item{
+    /* padding-top: 30px; */
+    padding-left: 80px;
+    position: relative;
+    top: 20px;
+    font-size: 23px;
+    
+}
+
+#main-container{
+    width: 100%;
+    height: 100%;
+    background-image: url("home.jpeg"); 
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#bottom-right {
+    font-size: 20px;
+    color: goldenrod;
+    text-align: right;
+    position: relative;
+    top: 200px;
+  }
+
+  #bottom {
+    font-size: 20px;
+    color: white;
+    text-align: right;
+    position: absolute;
+    bottom: 20px;
+  }
+
+#home-image{
+    position: absolute;
+}
+
+#social-icon{
+    width: 80px;
+    height: 40px;
+    padding-left: 40px;
+}
