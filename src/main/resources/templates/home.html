@@ -4,9 +4,38 @@ xmlns:th="http://www.thymeleaf.org"
 xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
 >
 <head th:include="fragments/layout :: headerFragment">
-    <title>Skeptic Moon</title>
+    <title th:with="pageTitle= 'Skeptic Moon'"> </title>
+    <!-- Needs some help getting title to appear-->
 </head>
 <body>
-    HELLO WORLDS!
+    
+
+    <div class="container" id="main-container">
+        <div th:replace="fragments/navbar"></div>
+        <div id="bottom-right">
+            <!--- add file to listen -->
+            <figure>
+                <figcaption>Listen to Ripperrou
+                </figcaption>
+                <audio
+                    controls
+                    src="ripperrou.wav">
+                        Your browser does not support the
+                        <code>audio</code> element.
+                </audio>
+            </figure>
+        </div>
+        <div id="bottom">
+            Follow Us On Social
+            <a href="https://www.facebook.com/skepticMoon">
+                <img id="social-icon" src="fb.png" >
+                </a>
+            <a href="https://www.instagram.com/skepticmoonmusic/">
+                <img id="social-icon" src="ig.png" >
+                </a>
+        </div>
+
+    </div>
+    <!-- <div class="container" id="secondary-container"></div> -->
 </body>
 </html>
