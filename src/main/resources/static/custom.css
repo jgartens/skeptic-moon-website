@@ -4,7 +4,8 @@ html, body {
 }
 
 .navbar-brand{
-    font-size: 28px;
+    font-size: 40px;
+    font-family: trattatello;
     position: relative;
     top: 20px;
 }
