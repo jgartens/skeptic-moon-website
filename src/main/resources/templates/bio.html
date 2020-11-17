@@ -6,32 +6,72 @@
     >
     <head th:include="fragments/layout :: headerFragment">
         <title>Skeptic Moon Bio</title>
+        <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+
     </head>
 <body>
     <div th:replace="fragments/navbar"></div>
-    <div class="container">
+    <div class="container" id="bio-container">
         <div class="conatiner" id="main-bio">
-                <p>Skeptic Moon is a band formed in New Orleans, Louisiana in March 2019. 
-                    Skeptic Moon is quickly carving a unique niche on the New Orleans scene. 
+            <img src="/pictures/full-band.jpg" id="full-band-picture">
+            <div id="main-bio-text">
+                <p>Skeptic Moon is a band formed in New Orleans, Louisiana in March 2019, and is 
+                    quickly carving a unique niche in the music scene. 
                     A growing repertoire of original music, written collaboratively, 
                     indicates a distinct approach to music-making. 
                     The band's style draws from each member's mutual love of 
                     jazz, fusion, progressive rock, classical, experimental noise,
                     metal, and hip-hop styles, leading to a trademark sound.
                 </p>
-                <img src="/pictures/full-band.jpg" id="full-band-picture">
-            <div id="band-member-cell">
-                <div class="row">
-                    Jake plays the drums. He hails from Brattleboro, Vermont. He draws 
-                    inspiration from his favorite bands and artists, which currently 
-                    include King Crimson, Christian Scott ATunde Adjuah, My Morningn Jacket, and IK Diaro. 
-                    <img src="/pictures/jake.jpg" id = "band-membber-picture">
-               </div>
+             </div>
+        </div>
+        <div class = "grid-container" id="band-member-cell">
+            <div class="grid-item" id="member-bio-text">
+            Jamie Koffler was born and raised in New Orleans, LA. 
+            He holds down keys, the pItCH wHeEl, noises and so much more. Jamie 
+            is currently in the process of mixing Skeptic Moon's first 
+            album. He listens to Chick Corea, mosaic.wav, Kanye, Black Uhuru
+            Slayer, Thundercat, Takako, and Minekawa.
+            </div>
+            <div class="grid-item">
+            <img src="/pictures/jamie.jpg" id = "band-member-picture">
             </div>
         </div>
-        <div id="bio-cell">
-            <img src="" alt="">
+        <div class = "grid-container" id="band-member-cell">
+            <div class="grid-item">
+            <img src="/pictures/michael.jpg" id = "band-member-picture">
+            </div>
+            <div class="grid-item" id="member-bio-text">
+                Next up is Michael SzE, violinst extrordinarie from San Fransisco. Michael
+                is fucking nuts, just wait for the album. His inspirations include Jean Luc Ponty,
+                John Coltrane, Charlie Parker, Jascha Heifetz, Anomalie, and Bad Snacks.
+            </div>
         </div>
+        <div class = "grid-container" id="band-member-cell">
+            <div class="grid-item" id="member-bio-text">
+            On tenor saxophone and flute is Ryan Park, who comes from Newton, MA. 
+            Some have called his saxophone playing "THe only palatable part of the
+            group!" Right now, Ryan's into Anderson.Paak, The Bad Plus, Paul Desmond, 
+            Sam COoke, Cecil McLoran Salvant, Dexter Gordan, and Joshua Redman.
+            </div>
+            <div class="grid-item">
+            <img src="/pictures/ryan.jpg" id = "band-member-picture">
+            </div>
+        </div>
+
+        <div class = "grid-container" id="band-member-cell">
+            <div class="grid-item">
+            <img src="/pictures/jake.jpg" id = "band-member-picture">
+            </div>
+            <div class="grid-item" id="member-bio-text">
+                Jake Gartenstein plays the drums. He hails from Brattleboro, Vermont --
+                the Greeen Mountain State. He draws 
+                inspiration from his favorite bands and artists, which currently 
+                include King Crimson, Christian Scott ATunde Adjuah, My Morningn Jacket, and IK Diaro. 
+            </div>
+        </div>
+       
+        
     </div>
 </body>
 </html>
