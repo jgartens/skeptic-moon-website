@@ -43,7 +43,8 @@ public class HomeController {
     }
 
     @GetMapping("/contact")
-    public String contact(){
+    public String contact(Model model){
+        model.addAttribute("user", new User());
         return "/contact";
     }
 
