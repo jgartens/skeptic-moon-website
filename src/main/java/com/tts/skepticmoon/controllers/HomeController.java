@@ -1,8 +1,13 @@
 package com.tts.skepticmoon.controllers;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.validation.Valid;
 
+import com.tts.skepticmoon.models.BlogPost;
 import com.tts.skepticmoon.models.User;
+import com.tts.skepticmoon.repository.BlogPostRepository;
 import com.tts.skepticmoon.service.EmailService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +22,11 @@ public class HomeController {
     
     @Autowired
     EmailService emailService;
+
+    @Autowired
+    BlogPostRepository blogPostRepository;
+
+    private List<BlogPost> posts = new ArrayList<>();
 
     @GetMapping("/")
     public String main(){
@@ -60,5 +70,27 @@ public class HomeController {
         model.addAttribute("successMsg", "Thank you for contacting Skeptic Moon! We will respond as soon as possible.");
         emailService.sendEmail(user);
         return "/contact";
+    }
+
+    @GetMapping("/discussion")
+    public String discussion(Model model){
+        posts.removeAll(posts);
+        for (BlogPost postFromDB : blogPostRepository.findAll()){
+            posts.add(postFromDB);
+        }
+        model.addAttribute("posts", posts);
+        return "/discussion";
+    }
+
+    @PostMapping("/discussion")
+    public String addNewBlogPost(@Valid BlogPost blogPost, BindingResult bindingResult, Model model ){
+        if (bindingResult.hasErrors()){
+            model.addAttribute("errorMsg", "Input is not valid. Please re-enter and re-submit");
+            return "/discussion";
+        }
+        blogPostRepository.save(new BlogPost(blogPost.getTitle(), blogPost.getAuthor(), blogPost.getBlogEntry()));
+        posts.add(blogPost);
+        return "/discussion";
+
     }
 }
