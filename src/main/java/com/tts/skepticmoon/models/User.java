@@ -1,9 +1,11 @@
 package com.tts.skepticmoon.models;
 
 
+import java.beans.JavaBean;
+
+import javax.persistence.Entity;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
-
 
 public class User {
     
