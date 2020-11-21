@@ -29,4 +29,9 @@ public class HomeController {
     public String shows(){
         return "/shows";
     }
+
+    @GetMapping("/contact")
+    public String contact(){
+        return "/contact";
+    }
 }
