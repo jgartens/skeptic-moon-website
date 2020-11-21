@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html
+xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+>
+<head th:include="fragments/layout :: headerFragment">
+    <title th:with="pageTitle= 'Skeptic Moon'"> </title>
+    <!-- Needs some help getting title to appear-->
+</head>
+<body>
+    <div class="container">
+        <div th:replace="fragments/navbar"></div>
+
+        <h1 id="contact-header">Contact Skeptic Moon</h1>
+        <h3 id="contact-bio"> Do you want us to play your wedding, or funeral, or other event? 
+            Are you a bass player or other musician and want to join the band, or jam? 
+            Have a special message for that special someone in the band? Send us a message! 
+        </h3>
+        <div id="contact-form">
+            <form action="#" th:action="@{/contact}" th:object="${user}" method="post">
+                <div id=form-group>
+                    <p>Name: <input  type="text" th:field="*{name}"/></p>
+                    <p>Email: <input type="text" th:field="*{address}"/></p>
+                    <p>Message: <input id="input-box" type="text" length=100 th:field="*{message}"/></p>
+                    <p><input type="submit" value="submit"/></p>
+                </div>
+            </form>
+        </div>
+    </div>
+    
+</body>
+</html>
