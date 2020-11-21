@@ -3,7 +3,9 @@ package com.tts.skepticmoon.controllers;
 import javax.validation.Valid;
 
 import com.tts.skepticmoon.models.User;
+import com.tts.skepticmoon.service.EmailService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -13,6 +15,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class HomeController {
     
+    @Autowired
+    EmailService emailService;
+
     @GetMapping("/")
     public String main(){
         return "/home";
@@ -51,7 +56,8 @@ public class HomeController {
 
         model.addAttribute("noErrors", true);
         model.addAttribute("user", user);
-
+        model.addAttribute("successMsg", "Thank you for contacting Skeptic Moon! We will respond as soon as possible.");
+        emailService.sendEmail(user);
         return "/contact";
     }
 }
