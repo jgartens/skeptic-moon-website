@@ -19,4 +19,14 @@ public class HomeController {
     public String bio(){
         return "/bio";
     }
+
+    @GetMapping("/music")
+    public String music(){
+        return "/music";
+    }
+
+    @GetMapping("/shows")
+    public String shows(){
+        return "/shows";
+    }
 }
