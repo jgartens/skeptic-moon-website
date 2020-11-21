@@ -118,7 +118,7 @@ html, body{
     background-size: cover;
 }
 
-#listen-header{
+#listen-header, #shows-header{
     text-align: center;
     font-size: 50px;
     font-weight: 800;
