@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html
+xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
+>
+<head th:include="fragments/layout :: headerFragment">
+    <title th:with="pageTitle= 'Skeptic Moon'"> </title>
+    <!-- Needs some help getting title to appear-->
+</head>
+<body>
+    <div class="container">
+        <div th:replace="fragments/navbar"></div>
+        <h1 id="discussion-header"> A place for all things Skeptic Moon</h1>
+    </div>
+</body>
+</html>
