@@ -1,11 +1,9 @@
 package com.tts.skepticmoon.models;
 
-import org.springframework.lang.NonNull;
 
-import javax.persistence.Id;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
+
 
 public class User {
     
