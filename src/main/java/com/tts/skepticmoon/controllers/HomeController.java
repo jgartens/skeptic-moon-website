@@ -14,7 +14,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
@@ -79,6 +81,7 @@ public class HomeController {
             posts.add(postFromDB);
         }
         model.addAttribute("posts", posts);
+        model.addAttribute("blogPost", new BlogPost());
         return "/discussion";
     }
 
@@ -90,7 +93,17 @@ public class HomeController {
         }
         blogPostRepository.save(new BlogPost(blogPost.getTitle(), blogPost.getAuthor(), blogPost.getBlogEntry()));
         posts.add(blogPost);
+        model.addAttribute("posts", posts);
         return "/discussion";
-
     }
+
+    // @DeleteMapping("/discussion")
+    // public String deletePost(@PathVariable Long id, BlogPost blogPost){
+    //     blogPostRepository.deleteById(id);
+    //     posts.removeAll(posts);
+    //     for (BlogPost postFromDB : blogPostRepository.findAll()){
+    //         posts.add(postFromDB);
+    //     }
+    //     return "/discussion";
+    // }
 }
