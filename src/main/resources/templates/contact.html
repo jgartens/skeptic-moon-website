@@ -26,6 +26,14 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
                 </div>
             </form>
         </div>
+        <div id="result-message">
+            <div th:if="${errorMsg}">
+                <div th:text="${errorMsg}" style="color:red"></div>
+            </div>
+            <div th:if="${successMsg}">
+                <div th:text="${successMsg}"></div>
+            </div>
+        </div>
     </div>
     
 </body>

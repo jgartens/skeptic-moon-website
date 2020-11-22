@@ -8,9 +8,58 @@ xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4"
     <!-- Needs some help getting title to appear-->
 </head>
 <body>
-    <div class="container">
+    <div class="container" id="discussion-container">
         <div th:replace="fragments/navbar"></div>
         <h1 id="discussion-header"> A place for all things Skeptic Moon</h1>
+        <div id="discussion-form-container">
+            <h2>Create a New Blog Post</h2>
+            <form action="#" th:action="@{/discussion}" th:object="${blogPost}" method="post">
+                <div class="discussion-form">                
+                        
+                        Title
+                        
+                        <input type="text" class = "form-control mb-3" placeholder= "Blog Title..." th:field="*{title}" />
+                
+                        Author
+                        
+                            <input type="text" class = "form-control mb-3" placeholder="Your Name Here..." th:field="*{author}" />
+                    
+                        Blog Entry
+
+                        <input type="text" id="input-box" class = "form-control mb-3" placeholder="What's Up?" th:field="*{blogEntry}" />
+                    
+                    
+                        <button class="btn btn-primary" type="Submit">
+                            Submit Your Post</button>
+                    
+                </div>
+            </form>
+        </div>
+        <div>
+            <div class="row d-flex justify-content-around" id="blogpost-cards">
+                <div th:each="blog:${posts}">
+                    <div class="card col-md-6 p-0 mb-3" id="blogpost-card" style="min-width: 18rem" >
+                        <div class="card-header">
+                            <p id="blog-title" th:text="${blog.title}" />
+                            by
+                            <p th:text="${blog.author}"/>
+
+                        </div>
+                        <div class="card-body">
+                            
+                            <p th:text="${blog.blogEntry}" />
+                        </div>
+                            <!-- <form action="#" th:action="@{'/discussion'(id=${blog.id})}" th:method="delete"
+                        class="form-horizontal">
+                                <div class="form-group">
+                                    <input type="hidden" name="_method" value="delete"/>
+                                    <button type="submit" class="btn btn-danger btn-block" th:text="Delete">Delete</button>
+                                </div>
+                            </form> -->
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </body>
 </html>
